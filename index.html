@@ -46,3 +46,241 @@
     </footer>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBO League</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eef0f4;
+}
+
+header{
+background:#0d1a2d;
+color:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+}
+
+.logo span{
+color:#ff7b00;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:30px;
+}
+
+.tabs{
+background:white;
+display:flex;
+border-radius:8px;
+overflow:hidden;
+margin-bottom:30px;
+}
+
+.tab{
+padding:20px 30px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.active{
+border-bottom:4px solid #ff7b00;
+}
+
+.team{
+background:white;
+padding:25px;
+margin-bottom:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-radius:8px;
+}
+
+.left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.place{
+font-size:40px;
+font-weight:bold;
+color:#0d1a2d;
+width:80px;
+}
+
+.logo-box{
+width:70px;
+height:70px;
+background:#111;
+border-radius:8px;
+}
+
+.team-name{
+font-size:28px;
+font-weight:bold;
+color:#233d6b;
+}
+
+.players{
+margin-top:8px;
+}
+
+.players span{
+background:#eef0f4;
+padding:4px 10px;
+border-radius:4px;
+margin-right:5px;
+font-size:13px;
+}
+
+.right{
+text-align:center;
+}
+
+.tier{
+background:#3d5c88;
+color:white;
+padding:5px 12px;
+border-radius:4px;
+margin-bottom:10px;
+display:inline-block;
+}
+
+.points{
+font-size:26px;
+font-weight:bold;
+color:#ff7b00;
+}
+
+.record{
+color:#3d5c88;
+font-weight:bold;
+}
+
+@media(max-width:800px){
+
+.team{
+flex-direction:column;
+align-items:flex-start;
+gap:20px;
+}
+
+.left{
+flex-direction:column;
+align-items:flex-start;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">NBO <span>LEAGUE</span></div>
+<div>☰</div>
+</header>
+
+<div class="container">
+
+<div class="tabs">
+<div class="tab active">🏆 Рейтинг</div>
+<div class="tab">📅 Матчи</div>
+<div class="tab">🎮 Турнир</div>
+<div class="tab">📊 Статистика</div>
+</div>
+
+<div class="team">
+<div class="left">
+<div class="place">#1</div>
+<div class="logo-box"></div>
+<div>
+<div class="team-name">NBOCS2</div>
+<div class="players">
+<span>player1</span>
+<span>player2</span>
+<span>player3</span>
+<span>player4</span>
+<span>player5</span>
+</div>
+</div>
+</div>
+<div class="right">
+<div class="tier">TIER 1</div>
+<div class="points">250</div>
+<div class="record">5-0</div>
+</div>
+</div>
+
+<div class="team">
+<div class="left">
+<div class="place">#2</div>
+<div class="logo-box"></div>
+<div>
+<div class="team-name">DIGNITAS</div>
+<div class="players">
+<span>player1</span>
+<span>player2</span>
+<span>player3</span>
+<span>player4</span>
+<span>player5</span>
+</div>
+</div>
+</div>
+<div class="right">
+<div class="tier">TIER 1</div>
+<div class="points">210</div>
+<div class="record">4-1</div>
+</div>
+</div>
+
+<div class="team">
+<div class="left">
+<div class="place">#3</div>
+<div class="logo-box"></div>
+<div>
+<div class="team-name">RAPTORS</div>
+<div class="players">
+<span>player1</span>
+<span>player2</span>
+<span>player3</span>
+<span>player4</span>
+<span>player5</span>
+</div>
+</div>
+</div>
+<div class="right">
+<div class="tier">TIER 2</div>
+<div class="points">180</div>
+<div class="record">3-2</div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
+
