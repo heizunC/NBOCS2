@@ -1,0 +1,43 @@
+-- Teams table
+CREATE TABLE teams (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT NOT NULL,
+  logo_url TEXT,
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Players table
+CREATE TABLE players (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  nickname TEXT NOT NULL,
+  real_name TEXT,
+  avatar_url TEXT,
+  role TEXT,
+  team_id UUID REFERENCES teams(id) ON DELETE SET NULL,
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Matches table
+CREATE TABLE matches (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  team1_id UUID REFERENCES teams(id) ON DELETE CASCADE NOT NULL,
+  team2_id UUID REFERENCES teams(id) ON DELETE CASCADE NOT NULL,
+  team1_score INTEGER DEFAULT 0,
+  team2_score INTEGER DEFAULT 0,
+  match_date TIMESTAMPTZ,
+  status TEXT DEFAULT 'upcoming' CHECK (status IN ('upcoming', 'live', 'completed')),
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Enable RLS
+ALTER TABLE teams ENABLE ROW LEVEL SECURITY;
+ALTER TABLE players ENABLE ROW LEVEL SECURITY;
+ALTER TABLE matches ENABLE ROW LEVEL SECURITY;
+
+-- Public read policies (everyone can view)
+CREATE POLICY "public_select_teams" ON teams FOR SELECT USING (true);
+CREATE POLICY "public_select_players" ON players FOR SELECT USING (true);
+CREATE POLICY "public_select_matches" ON matches FOR SELECT USING (true);
+
+
+
